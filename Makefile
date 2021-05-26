@@ -6,23 +6,57 @@
 #    By: msanjuan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:53:49 by msanjuan          #+#    #+#              #
-#    Updated: 2021/05/21 17:52:42 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/05/26 16:20:58 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-// creer un libft.a qui contient les .o mais aussi .h et Makefile!
-compile_all:
-	gcc -c -o:w  -Wall -Werror -Wextra *.c
+SRCS = ft_strlen.c	\
+	   ft_isalnum.c		\
+	   ft_isalpha.c		\
+	   ft_isascii.c		\
+	   ft_isdigit.c		\
+	   ft_isprint.c		\
+	   ft_toupper.c		\
+	   ft_tolower.c		\
+	   ft_strncmp.c		\
+	   ft_strchr.c		\
+	   ft_strrchr.c		\
+	   ft_atoi.c		\
+	   ft_strlcpy.c		\
+	   ft_strnstr.c		\
 
-create_lib:
-	ar -crs libft.a *.o
+OBJS = ${SRCS:.c=.o}
 
-all: compile_all create_lib
+NAME = libft.a
+
+CC = gcc
+
+CFLAGS = -Wall -Werror -Wextra
+
+CREATE = ar rcs
+
+RM = rm -f
+
+.c.o:
+		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}				
+
+${NAME}: ${OBJS}
+		echo "Creating the libft wih the .o files..."
+		${CREATE} ${NAME} ${OBJS}
+
+run:	all
+		echo "Compiling and running the files..."
+		${CC} ${CFLAGS} main.c -I. -L. -lft
+		./a.out
+
+all:	${NAME}
 
 clean:
-	/bin/rm -f *.o
+		${RM} ${OBJS} ${NAME} ./a.out
 
 fclean: clean
-	/bin/rm -f $(NAME)	
+		${RM} ${OBJS} ${NAME} ./a.out	
 
-re: fclean all
+re: 	fclean run
+
+.PHONY: all clean fclean re run
