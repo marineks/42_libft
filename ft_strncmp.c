@@ -6,9 +6,11 @@
 /*   By: msanjuan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 14:41:20 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/05/24 15:38:13 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/05/26 15:00:02 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /* A/ SOIT les chaines sont egales et on retourne 0; 
  * B/ SOIT s1 est plus petite que s2 et on retourne <0 
