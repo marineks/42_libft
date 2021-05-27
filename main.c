@@ -6,7 +6,7 @@
 /*   By: msanjuan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:48:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/05/27 18:32:05 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/05/27 19:17:55 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int	main(void)
 	
 	printf("---->>FT_STRCHR<<-------------------------------------------------------\n\n");
 	printf("      Ma Fonction : %s | La vraie : %s\n", ft_strchr("hello", 108), strchr("hello", 108));
+	printf("\n");
+	
+	printf("---->>FT_STRRCHR<<-------------------------------------------------------\n\n");
+	printf("      Ma Fonction : %s | La vraie : %s\n", ft_strrchr("hello", 108), strrchr("hello", 108));
 	printf("\n");
 	
 	printf("---->>FT_ATOI<<-------------------------------------------------------\n\n");
