@@ -6,7 +6,7 @@
 #    By: msanjuan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:53:49 by msanjuan          #+#    #+#              #
-#    Updated: 2021/05/26 16:20:58 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/05/27 11:01:49 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS = ft_strlen.c	\
 	   ft_atoi.c		\
 	   ft_strlcpy.c		\
 	   ft_strnstr.c		\
+	   ft_strlcat.c		\
 
 OBJS = ${SRCS:.c=.o}
 
