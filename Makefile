@@ -6,7 +6,7 @@
 #    By: msanjuan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:53:49 by msanjuan          #+#    #+#              #
-#    Updated: 2021/05/27 11:01:49 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/05/27 17:23:07 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS = ft_strlen.c	\
 	   ft_strlcpy.c		\
 	   ft_strnstr.c		\
 	   ft_strlcat.c		\
+	   ft_strdup.c		\
 
 OBJS = ${SRCS:.c=.o}
 
@@ -42,11 +43,11 @@ RM = rm -f
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}				
 
 ${NAME}: ${OBJS}
-		echo "Creating the libft wih the .o files..."
+		@echo "Creating the libft wih the .o files..."
 		${CREATE} ${NAME} ${OBJS}
 
 run:	all
-		echo "Compiling and running the files..."
+		@echo "Compiling and running the files..."
 		${CC} ${CFLAGS} main.c -I. -L. -lft
 		./a.out
 
