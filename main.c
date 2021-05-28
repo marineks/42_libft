@@ -6,7 +6,7 @@
 /*   By: msanjuan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:48:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/05/27 19:17:55 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/05/28 12:29:15 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,15 @@ int	main(void)
 	printf("\n");
 	free(ft_strdup("Born to code"));
 	free(strdup("Born to code"));
-	
+
+
+	int  test;
+	int test2;
+
+	test=10;
+	test2=12;
+	printf("---->>FT_MEMSET<<-------------------------------------------------------\n\n");
+	printf("      Ma fonction: %s | La vraie : %s\n", ft_memset((void*)&test, 'M', 3), memset((void*)&test2, 'M', 3));
+	printf("\n");
 	return (0);
 }
