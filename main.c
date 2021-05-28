@@ -6,7 +6,7 @@
 /*   By: msanjuan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:48:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/05/28 12:29:15 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/05/28 16:55:02 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,32 @@ int	main(void)
 	free(ft_strdup("Born to code"));
 	free(strdup("Born to code"));
 
-
 	int  test;
 	int test2;
 
-	test=10;
-	test2=12;
+	test=4;
+	test2=4;
 	printf("---->>FT_MEMSET<<-------------------------------------------------------\n\n");
 	printf("      Ma fonction: %s | La vraie : %s\n", ft_memset((void*)&test, 'M', 3), memset((void*)&test2, 'M', 3));
+	printf("\n");
+
+	printf("---->>FT_BZERO<<-------------------------------------------------------\n\n");
+	
+	char * test3;
+	char * test4;
+
+	test3[40] = "Bonjour tout le monde";
+	test4[40] = "Bonjour tout le monde";
+	ft_bzero((void*)&test3, 3);
+	bzero((void*)&test4, 3);
+	printf("      Ma fonction: %s | La vraie : %s\n", test3, test4);
+	printf("\n");
+	
+	printf("---->>FT_CALLOC<<-------------------------------------------------------\n\n");
+	
+	printf("      Ma fonction: %s | La vraie : %s\n", ft_calloc(3, 12), calloc(3, 12));
+	free(ft_calloc(3, 12));
+	free(calloc(3, 12));
 	printf("\n");
 	return (0);
 }

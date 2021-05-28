@@ -6,7 +6,7 @@
 /*   By: msanjuan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 10:11:30 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/05/28 12:29:12 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:17:11 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strdup(const char *s1);
 void	*ft_memset(void *b, int c, size_t len);
-
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t count, size_t size);
 #endif
