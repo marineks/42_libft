@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msanjuan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:48:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/05/28 16:55:02 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/05/31 10:51:20 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,16 @@ int	main(void)
 	printf("      Ma fonction: %s | La vraie : %s\n", ft_calloc(3, 12), calloc(3, 12));
 	free(ft_calloc(3, 12));
 	free(calloc(3, 12));
+	printf("\n");
+
+	
+	printf("---->>FT_MEMCHR<<-------------------------------------------------------\n\n");
+	int  test6;
+	int test5;
+
+	test6=4;
+	test5=4;
+	printf("      Ma fonction: %s | La vraie : %s\n", ft_memchr((void*)&test6, 'M', 3), memchr((void*)&test5, 'M', 3));
 	printf("\n");
 	return (0);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: msanjuan <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:53:49 by msanjuan          #+#    #+#              #
-#    Updated: 2021/05/28 15:15:47 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/05/31 10:49:24 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS = ft_strlen.c	\
 	   ft_memset.c		\
 	   ft_bzero.c		\
 	   ft_calloc.c		\
+	   ft_memchr.c		\
 
 OBJS = ${SRCS:.c=.o}
 
