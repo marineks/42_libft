@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:48:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/05/31 10:51:20 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/05/31 11:17:30 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,17 @@ int	main(void)
 	test6=4;
 	test5=4;
 	printf("      Ma fonction: %s | La vraie : %s\n", ft_memchr((void*)&test6, 'M', 3), memchr((void*)&test5, 'M', 3));
+	printf("\n");
+
+	printf("---->>FT_MEMCMP<<-------------------------------------------------------\n\n");
+	char * test7;
+	char * test8;
+
+	*test7 = "hello world";
+	*test8 = "hello world";
+	printf("      Ma fonction: %s | La vraie : %s\n", 
+		ft_memcmp((void*)&test7, (void *)&test8, 3), 
+		memcmp((void*)&test7, (void *)&test8, 3));
 	printf("\n");
 	return (0);
 }
