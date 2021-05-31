@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:48:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/05/31 11:17:30 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/05/31 15:45:16 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,44 +70,69 @@ int	main(void)
 	printf("      Ma fonction: %s | La vraie : %s\n", ft_memset((void*)&test, 'M', 3), memset((void*)&test2, 'M', 3));
 	printf("\n");
 
-	printf("---->>FT_BZERO<<-------------------------------------------------------\n\n");
+	// printf("---->>FT_BZERO<<-------------------------------------------------------\n\n");
 	
-	char * test3;
-	char * test4;
+	// char * test3;
+	// char * test4;
 
-	test3[40] = "Bonjour tout le monde";
-	test4[40] = "Bonjour tout le monde";
-	ft_bzero((void*)&test3, 3);
-	bzero((void*)&test4, 3);
-	printf("      Ma fonction: %s | La vraie : %s\n", test3, test4);
+	// test3[40] = "Bonjour tout le monde";
+	// test4[40] = "Bonjour tout le monde";
+	// ft_bzero((void*)&test3, 3);
+	// bzero((void*)&test4, 3);
+	// printf("      Ma fonction: %s | La vraie : %s\n", test3, test4);
+	// printf("\n");
+	
+	// printf("---->>FT_CALLOC<<-------------------------------------------------------\n\n");
+	
+	// printf("      Ma fonction: %s | La vraie : %s\n", ft_calloc(3, 12), calloc(3, 12));
+	// free(ft_calloc(3, 12));
+	// free(calloc(3, 12));
+	// printf("\n");
+
+	// A PARTIR DE LA MES TESTS BUG
+	// printf("---->>FT_MEMCHR<<-------------------------------------------------------\n\n");
+	// int  test6;
+	// int test5;
+
+	// test6=4;
+	// test5=4;
+	// printf("      Ma fonction: %s | La vraie : %s\n", ft_memchr((void*)&test6, 'M', 3), memchr((void*)&test5, 'M', 3));
+	// printf("\n");
+
+	// printf("---->>FT_MEMCMP<<-------------------------------------------------------\n\n");
+	// char * test7;
+	// char * test8;
+
+	// *test7 = "hello world";
+	// *test8 = "hello world";
+	// printf("      Ma fonction: %s | La vraie : %s\n", 
+	// 	ft_memcmp((void*)&test7, (void *)&test8, 3), 
+	// 	memcmp((void*)&test7, (void *)&test8, 3));
+	// printf("\n");
+
+	
+	printf("---->>FT_MEMCPY<<-------------------------------------------------------\n\n");
+	char *test7;
+	char *test8;
+
+	test7 = "coucou petit test";
+	test8 = "hello world";
+	printf("      Ma fonction: %p | La vraie : %p\n", ft_memcpy((void*)&test7, (const void *)&test8, 3), memcpy((void*)&test7, (const void *)&test8, 3));
 	printf("\n");
 	
-	printf("---->>FT_CALLOC<<-------------------------------------------------------\n\n");
-	
-	printf("      Ma fonction: %s | La vraie : %s\n", ft_calloc(3, 12), calloc(3, 12));
-	free(ft_calloc(3, 12));
-	free(calloc(3, 12));
+	printf("---->>FT_MEMCCPY<<-------------------------------------------------------\n\n");
+	char *source;
+	char *dest;
+	char *destination;
+	int occurence;
+
+	source[50] = "coucou";
+	dest[50] = "hello world";
+	destination[50] = "hello world";
+	ft_memccpy((void*)&dest, (void *)&source, 'o',11);
+	memccpy((void*)&destination, (void *)&source, 'o', 11);
+	printf("      Ma fonction: %s | La vraie : %s\n", dest, destination);
 	printf("\n");
 
-	
-	printf("---->>FT_MEMCHR<<-------------------------------------------------------\n\n");
-	int  test6;
-	int test5;
-
-	test6=4;
-	test5=4;
-	printf("      Ma fonction: %s | La vraie : %s\n", ft_memchr((void*)&test6, 'M', 3), memchr((void*)&test5, 'M', 3));
-	printf("\n");
-
-	printf("---->>FT_MEMCMP<<-------------------------------------------------------\n\n");
-	char * test7;
-	char * test8;
-
-	*test7 = "hello world";
-	*test8 = "hello world";
-	printf("      Ma fonction: %s | La vraie : %s\n", 
-		ft_memcmp((void*)&test7, (void *)&test8, 3), 
-		memcmp((void*)&test7, (void *)&test8, 3));
-	printf("\n");
 	return (0);
 }

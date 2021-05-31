@@ -6,7 +6,7 @@
 #    By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:53:49 by msanjuan          #+#    #+#              #
-#    Updated: 2021/05/31 11:12:59 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/05/31 15:39:45 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ SRCS = ft_strlen.c	\
 	   ft_calloc.c		\
 	   ft_memchr.c		\
 	   ft_memcmp.c		\
+	   ft_memcpy.c		\
+	   ft_memccpy.c		\
 
 OBJS = ${SRCS:.c=.o}
 
