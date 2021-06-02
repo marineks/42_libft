@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 16:34:15 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/01 10:56:44 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/02 12:54:31 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void    *ft_memmove(void *dst, const void *src, size_t len)
     i = 0;
     if (dst <= src)
     {
+       	if (ptr_dst == NULL && ptr_src == NULL)
+			return (NULL);
         while (i < len)
         {
             ptr_dst[i] = ptr_src[i];
@@ -31,11 +33,8 @@ void    *ft_memmove(void *dst, const void *src, size_t len)
     }
     else if (dst > src)
     {
-        while (len > 0)
-        {
+        while (len--)
             ptr_dst[len] = ptr_src[len];
-            len--;
-        }
     }
     return (dst);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msanjuan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 12:22:20 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/05/24 14:03:53 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/01 11:31:34 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c > 32 && c < 127)
+	if (c >= 32 && c < 127)
 		return (1);
 	else
 		return (0);	
