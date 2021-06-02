@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 10:11:30 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/05/31 16:34:20 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/02 15:41:38 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ int     ft_memcmp(const void *s1, const void *s2, size_t n);
 void    *ft_memcpy(void * dst, const void * src, size_t n);
 void    *ft_memccpy(void *dst, const void *src, int c, size_t n);
 void    *ft_memmove(void *dst, const void *src, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 #endif
