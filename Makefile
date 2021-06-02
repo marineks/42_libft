@@ -6,7 +6,7 @@
 #    By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:53:49 by msanjuan          #+#    #+#              #
-#    Updated: 2021/06/02 16:14:31 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/06/02 16:44:27 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS = ft_strlen.c	\
 	   ft_memmove.c 	\
 	   ft_substr.c		\
 	   ft_strjoin.c		\
+	   ft_strtrim.c		\
 
 OBJS = ${SRCS:.c=.o}
 
