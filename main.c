@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:48:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/05/31 15:45:16 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/03 16:19:30 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,18 +120,23 @@ int	main(void)
 	printf("      Ma fonction: %p | La vraie : %p\n", ft_memcpy((void*)&test7, (const void *)&test8, 3), memcpy((void*)&test7, (const void *)&test8, 3));
 	printf("\n");
 	
-	printf("---->>FT_MEMCCPY<<-------------------------------------------------------\n\n");
-	char *source;
-	char *dest;
-	char *destination;
-	int occurence;
+	// printf("---->>FT_MEMCCPY<<-------------------------------------------------------\n\n");
+	// char *source;
+	// char *dest;
+	// char *destination;
+	// int occurence;
 
-	source[50] = "coucou";
-	dest[50] = "hello world";
-	destination[50] = "hello world";
-	ft_memccpy((void*)&dest, (void *)&source, 'o',11);
-	memccpy((void*)&destination, (void *)&source, 'o', 11);
-	printf("      Ma fonction: %s | La vraie : %s\n", dest, destination);
+	// source[50] = "coucou";
+	// dest[50] = "hello world";
+	// destination[50] = "hello world";
+	// ft_memccpy((void*)&dest, (void *)&source, 'o',11);
+	// memccpy((void*)&destination, (void *)&source, 'o', 11);
+	// printf("      Ma fonction: %s | La vraie : %s\n", dest, destination);
+	// printf("\n");
+
+	printf("---->>FT_STRTRIM<<-------------------------------------------------------\n\n");
+	
+	printf("      Ma fonction: %s\n", ft_strtrim("lalalalaaal", "la"));
 	printf("\n");
 
 	return (0);
