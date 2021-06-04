@@ -6,7 +6,7 @@
 #    By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:53:49 by msanjuan          #+#    #+#              #
-#    Updated: 2021/06/04 12:07:24 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/06/04 15:42:39 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRCS = ft_strlen.c	\
 	   ft_strtrim.c		\
 	   ft_strmapi.c		\
 	   ft_itoa.c 		\
+	   ft_putchar_fd.c 	\
 
 OBJS = ${SRCS:.c=.o}
 
