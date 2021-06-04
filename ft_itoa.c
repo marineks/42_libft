@@ -6,28 +6,27 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 12:07:40 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/04 15:09:02 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/04 15:28:57 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int     ft_howmanydigits(int number)
+int     ft_howmanydigits(int long long number)    // Purpose: find the correct length for allocating memory for str
 {
     int i;
     i = 0;
-    if (number < 0)
+    if (number < 0)                     // If n is negative, i is incremented to "pass" the '-' sign
         i++;
-    while (number % 10 != 0)
+    while (number % 10 != 0)            //  Decomposing n. The number of loops is the digit number
     {
         number = number / 10;
         i++; 
     }
-    return (i);
+    return (i);                         // ex : 7895 needs 4 loops. Then they are 4 digits (7, 8, 9, 5)
 }
 
-char    *ft_reverse_str(char *str)
+char    *ft_reverse_str(char *str)      // Purpose : reverse the result from the conversion in good order
 {
     char            *copy;
     unsigned int    i;
@@ -42,24 +41,26 @@ char    *ft_reverse_str(char *str)
         i++;
         len--;
     }
-    copy[i] = str[len];
+    copy[i] = str[len];                 // makeshift roundaway to a seg fault. must be fixed later
     copy[i + 1] = '\0';
     return (copy);
 }
 
 char    *ft_itoa(int n)
 {
-    char    *converted_string;
-    int     cache;
-    int     length;
-    int     i;
+    char               *converted_string;
+    int long long    cache;
+    int long long    length;
+    int long long    i;
 
-    length = ft_howmanydigits(n);
+    /* INITIALISATION, ALLOCATING MEMORY */
+    length = ft_howmanydigits((int long long)n);
     converted_string = (char *)malloc(sizeof(char) * (length + 2));
     if (!converted_string)
         return (NULL);
     i = 0;
     cache = n;
+    /* SPECIAL CASES */
     if (n == -2147483648)
         return (converted_string = "-2147483648");
     if (n == -0)
@@ -69,17 +70,15 @@ char    *ft_itoa(int n)
         n = -n;
         length--;
     }
+    /* CONVERSION FROM INT TO CHAR */
     while (i < length)
     {
-            // printf("     n: %d\n", n);
             converted_string[i] = (n % 10) + 48;
             n = n / 10; 
-            // printf("     converted_str[i] : %c\n", converted_string[i]);
         i++;
     }
     if (cache < 0)
     {
-        // printf("     Iteration : %d\n", i);
         converted_string[i] = '-';
         converted_string[i + 1] = '\0';
     }
@@ -87,11 +86,3 @@ char    *ft_itoa(int n)
         converted_string[i] = '\0';
     return (ft_reverse_str(converted_string));
 }
-
-/* prendre l'int (ex : 1234) et le transformer en "1234"
-    steps :
-    1/ decomposer l'int en 1, 2, 3 et 4
-    2/ allouer une chaine de caracteres de la taille du nb d'int decomposes (ici 4 + '\0' donc 5)
-    3/ boucler et attribuer a chaque elt de l'array un 1, 2, 3, 4 converti en char
-    4 / retourner la chaine de caracteres
-*/
