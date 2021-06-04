@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:48:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/03 16:19:30 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/04 14:58:47 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,12 @@ int	main(void)
 	
 	printf("      Ma fonction: %s\n", ft_strtrim("lalalalaaal", "la"));
 	printf("\n");
+
+	printf("---->>FT_ITOA<<-------------------------------------------------------\n\n");
+	
+	printf("      Ma fonction: %s\n", ft_itoa(-0));
+	printf("\n");
+
 
 	return (0);
 }
