@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 12:07:40 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/04 15:28:57 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/08 17:17:54 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int     ft_howmanydigits(int long long number)    // Purpose: find the correct l
 {
     int i;
     i = 0;
-    if (number < 0)                     // If n is negative, i is incremented to "pass" the '-' sign
+    if (number <= 0)                     // If n is negative, i is incremented to "pass" the '-' sign
         i++;
-    while (number % 10 != 0)            //  Decomposing n. The number of loops is the digit number
+    while (number)            //  Decomposing n. The number of loops is the digit number
     {
         number = number / 10;
         i++; 
@@ -52,29 +52,28 @@ char    *ft_itoa(int n)
     int long long    cache;
     int long long    length;
     int long long    i;
+    int long long    nb;
 
     /* INITIALISATION, ALLOCATING MEMORY */
-    length = ft_howmanydigits((int long long)n);
+    nb = (int long long)n;
+    length = ft_howmanydigits(nb);
     converted_string = (char *)malloc(sizeof(char) * (length + 2));
     if (!converted_string)
         return (NULL);
     i = 0;
-    cache = n;
-    /* SPECIAL CASES */
-    if (n == -2147483648)
-        return (converted_string = "-2147483648");
-    if (n == -0)
-        return (converted_string = "0");
-    if (n < 0)
+    cache = (int long long)n;
+    
+    /* SPECIAL CASE : negative number */
+    if (nb < 0)
     {
-        n = -n;
+        nb = -nb;
         length--;
     }
     /* CONVERSION FROM INT TO CHAR */
     while (i < length)
     {
-            converted_string[i] = (n % 10) + 48;
-            n = n / 10; 
+            converted_string[i] = (nb % 10) + 48;
+            nb = nb / 10; 
         i++;
     }
     if (cache < 0)
