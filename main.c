@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:48:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/08 17:12:17 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/09 14:58:51 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,10 +144,10 @@ int	main(void)
 	printf("      Ma fonction: %s\n", ft_itoa(-0));
 	printf("\n");
 
-	// printf("---->>FT_SPLIT<<-------------------------------------------------------\n\n");
+	printf("---->>FT_SPLIT<<-------------------------------------------------------\n\n");
 	
-	// ft_split("Bonjourclecsang", 'c');
-	// printf("\n");
+	printf("      Ma fonction: %zu\n", ft_new_string_count(" ", ' '));
+	printf("\n");
 
 	return (0);
 }
