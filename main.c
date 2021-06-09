@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:48:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/09 14:58:51 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/09 18:23:39 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,8 +146,29 @@ int	main(void)
 
 	printf("---->>FT_SPLIT<<-------------------------------------------------------\n\n");
 	
-	printf("      Ma fonction: %zu\n", ft_new_string_count(" ", ' '));
-	printf("\n");
+	//printf("      Ma fonction: %zu\n", ft_new_string_count(" ", ' '));
+	// ft_split("   Bonjour Marine ", ' ');
+	// char **tabtest;
+	// size_t i;
+	// size_t j;
+
+	// tabtest = ft_split("   Bonjour Marine ", ' ');
+
+	// i= 0;
+	// j = 0;
+	// while (i < strlen(tabtest[i]))
+	// {
+	// 	while (j < strlen(&(tabtest[i][j])))
+	// 	{
+	// 		printf("%c", tabtest[i][j]);
+	// 		j++;
+	// 	}
+	// 	putchar('\n');
+	// 	i++;
+	// 	j = 0;
+	// }
+
+
 
 	return (0);
 }
