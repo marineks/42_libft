@@ -6,12 +6,12 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 16:58:10 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/09 18:43:56 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/09 19:25:48 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 // Compter le nombres de segmentations/nouvelles chaines de caractères
 size_t      ft_new_string_count(char const *str, char set)
 {
@@ -61,8 +61,7 @@ static char        **ft_create_new_tab(char **new_tab, char const *str, char set
     row = 0;
     column = 0;
     length = 0;
-    if (*str)
-    {
+
     while (str[i])  // " Bonjour Marine "
     {
         if (str[i] != set) // Ex : 'B' != ' '
@@ -80,12 +79,11 @@ static char        **ft_create_new_tab(char **new_tab, char const *str, char set
             new_tab[row][column] = '\0';
             row++;                          // On descend de ligne dans le tableau
             column = 0;
-            --i;
+            --i;                            // i = i - 1 car sinon on avance trop (2x i++)
         }
         i++;                                // Le i reprend à l'espace après "Bonjour"
     }
     new_tab[row] = NULL;  
-    } 
     return (new_tab);
 }
 
@@ -93,9 +91,12 @@ char        **ft_split(char const *str, char set)
 {
     size_t string_count;
     char **new_tab;
+
+    if (!str)
+        return (NULL);
     string_count = ft_new_string_count(str, set);
     new_tab = (char **)malloc(sizeof(char *) * (string_count + 1));
-    if (!new_tab || !str)
+    if (!new_tab)
         return (NULL);
     if (string_count == 0 )           // When str = "   " && set = ' ' 
         return (new_tab = NULL);
