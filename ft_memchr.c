@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 10:48:09 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/02 12:45:16 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/21 16:11:06 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ void    *ft_memchr(const void *s, int c, size_t n)
 	string = (unsigned char *)s;
     occurence = (unsigned char)c;
  
+	if (occurence == 0 && n == 0)
+		return (NULL);
 	while (i < n - 1)
 	{
 		if (string[i] == occurence)
-		{
 			return (string + i);			
-		}
 		i++;
 	}
-	if (string[i] == c)    /* if c == '\0' and we find it */
+	if (string[i] == occurence)    /* if c == '\0' and we find it */
         return (string + i);
     return (NULL);			            /* if we dont find any occurrence in s */		
 }
