@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 11:12:08 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/02 12:28:19 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/21 12:21:29 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     i = 0;
     first_string = (unsigned char *)s1;
     second_string = (unsigned char *)s2;
+    if (n == 0)
+        return (0);
     while (i < n - 1)
     {
         if (first_string[i] != second_string[i])
