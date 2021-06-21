@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 16:58:10 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/09 19:25:48 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/21 16:10:34 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,11 +95,11 @@ char        **ft_split(char const *str, char set)
     if (!str)
         return (NULL);
     string_count = ft_new_string_count(str, set);
+    if (string_count == 0 )           // When str = "   " && set = ' ' 
+        return (NULL);
     new_tab = (char **)malloc(sizeof(char *) * (string_count + 1));
     if (!new_tab)
         return (NULL);
-    if (string_count == 0 )           // When str = "   " && set = ' ' 
-        return (new_tab = NULL);
     ft_create_new_tab(new_tab, str, set);
     return (new_tab);
 }
