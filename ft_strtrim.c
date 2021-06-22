@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 16:44:36 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/03 16:28:40 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/22 10:26:25 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,12 @@ char *ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	size_t	i;
 
+	
 	if (!set || !s1) 
 		return (NULL);
 	start = ft_ischarset_start(s1, set);	// Regarder si charset au debut
 	end = ft_ischarset_end(s1, set);		// Regarder si charset a la fin	
-	if (ft_strlen(s1) == 0 || ft_strlen(set) == 0 || (start == ft_strlen(s1) && end == 0)) // cas spés bien chiants
+	if (ft_strlen(s1) == 0 || (start == ft_strlen(s1) && end == 0)) // cas spés bien chiants
 	{
 		tmp = (char *)malloc(sizeof(char) * 1);
 		tmp[0] = 0;
