@@ -6,12 +6,11 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 16:58:10 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/21 16:10:34 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/22 13:28:30 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 // Compter le nombres de segmentations/nouvelles chaines de caractères
 size_t      ft_new_string_count(char const *str, char set)
 {
@@ -24,7 +23,7 @@ size_t      ft_new_string_count(char const *str, char set)
     count = 0;
     while (str[i] == set)
         i++;
-    while (str[i])
+    while (str[i] != '\0')
     {
         is_not_set = str[i] != set;
         next_is_set = str[i + 1] == set || str[i + 1] == '\0';
@@ -96,7 +95,11 @@ char        **ft_split(char const *str, char set)
         return (NULL);
     string_count = ft_new_string_count(str, set);
     if (string_count == 0 )           // When str = "   " && set = ' ' 
-        return (NULL);
+    {
+        new_tab = (char **)malloc(sizeof(char *) * 1);
+        new_tab[0] = NULL;
+        return (&new_tab[0]);
+    }
     new_tab = (char **)malloc(sizeof(char *) * (string_count + 1));
     if (!new_tab)
         return (NULL);
