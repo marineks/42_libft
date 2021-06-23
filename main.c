@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 14:48:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/22 11:49:52 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:23:01 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,28 +144,28 @@ int	main(void)
 	printf("      Ma fonction: %s\n", ft_itoa(-0));
 	printf("\n");
 
-	printf("---->>FT_SPLIT<<-------------------------------------------------------\n\n");
+	// printf("---->>FT_SPLIT<<-------------------------------------------------------\n\n");
 	
-	printf("      Ma fonction: %zu\n", ft_new_string_count("     ", ' '));
+	// printf("      Ma fonction: %zu\n", ft_new_string_count("     ", ' '));
 	// ft_split("     ", ' ');
-	char **tabtest;
-	size_t i;
-	size_t j;
+	// char **tabtest;
+	// size_t i;
+	// size_t j;
 
-	tabtest = ft_split("     ", ' ');
+	// tabtest = ft_split("     ", ' ');
 
-	i= 0;
-	j = 0;
-	while (i < strlen(tabtest[i]))
-	{
-		while (j < strlen(&(tabtest[i][j])))
-		{
-			printf("%c", tabtest[i][j]);
-			j++;
-		}
-		putchar('\n');
-		i++;
-		j = 0;
-	}
-	return (0);
+	// i= 0;
+	// j = 0;
+	// while (i < strlen(tabtest[i]))
+	// {
+	// 	while (j < strlen(&(tabtest[i][j])))
+	// 	{
+	// 		printf("%c", tabtest[i][j]);
+	// 		j++;
+	// 	}
+	// 	putchar('\n');
+	// 	i++;
+	// 	j = 0;
+	// }
+	// return (0);
 }

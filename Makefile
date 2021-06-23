@@ -6,7 +6,7 @@
 #    By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:53:49 by msanjuan          #+#    #+#              #
-#    Updated: 2021/06/23 10:48:39 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/06/23 11:24:22 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,11 +44,14 @@ SRCS = ft_strlen.c	\
 	   ft_putendl_fd.c 	\
 	   ft_putnbr_fd.c	\
 	   ft_split.c 		\
-	   ft_lstnew.c		\
-	   ft_lstadd_front.c	\
-	   ft_lstsize.c		\
+
+BONUS = ft_lstnew.c		\
+		ft_lstadd_front.c	\
+		ft_lstsize.c		\
 
 OBJS = ${SRCS:.c=.o}
+
+BOBJS = ${BONUS:.c=.o}
 
 NAME = libft.a
 
@@ -72,14 +75,18 @@ run:	all
 		${CC} ${CFLAGS} main.c -I. -L. -lft
 		./a.out
 
+bonus:	${OBJS} ${BOBJS}
+		@echo "Creating the libft wih the .o bonus files..."
+		${CREATE} ${NAME} ${OBJS} ${BOBJS}
+
 all:	${NAME}
 
 clean:
-		${RM} ${OBJS} ${NAME} ./a.out
+		${RM} ${OBJS} ${BOBJS} ${NAME} ./a.out
 
 fclean: clean
-		${RM} ${OBJS} ${NAME} ./a.out	
+		${RM} ${OBJS} ${BOBJS} ${NAME} ./a.out	
 
 re: 	fclean run
 
-.PHONY: all clean fclean re run
+.PHONY: all clean fclean re run bonus
