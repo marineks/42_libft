@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 10:11:30 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/23 09:25:52 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/23 10:08:30 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ void    ft_putendl_fd(char *s, int fd);
 void    ft_putnbr_fd(int n, int fd);
 char    **ft_split(char const *s, char c);
 t_list  *ft_lstnew(void *content);
-
+void    ft_lstadd_front(t_list **alst, t_list *new);
 
 #endif
