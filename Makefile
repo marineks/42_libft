@@ -6,7 +6,7 @@
 #    By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:53:49 by msanjuan          #+#    #+#              #
-#    Updated: 2021/06/23 17:11:45 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/06/23 17:23:58 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ BONUS = ft_lstnew.c		\
 		ft_lstdelone.c	\
 		ft_lstclear.c	\
 		ft_lstiter.c	\
+		ft_lstmap.c		\
 
 OBJS = ${SRCS:.c=.o}
 
