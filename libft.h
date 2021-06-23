@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 10:11:30 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/23 10:49:12 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:40:49 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,7 @@ char    **ft_split(char const *s, char c);
 t_list  *ft_lstnew(void *content);
 void    ft_lstadd_front(t_list **alst, t_list *new);
 int     ft_lstsize(t_list *lst);
+void    ft_lstadd_back(t_list **alst, t_list *new);
+t_list  *ft_lstlast(t_list *lst);
 
 #endif
