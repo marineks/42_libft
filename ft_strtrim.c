@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 16:44:36 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/25 17:29:58 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:39:33 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	while (start <= end)
-	{
-		trimmed_s1[i] = s1[start];
-		start++;
-		i++;
-	}
+		trimmed_s1[i++] = s1[start++];
 	trimmed_s1[i] = '\0';
 	return (trimmed_s1);
 }

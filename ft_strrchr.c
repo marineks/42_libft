@@ -6,15 +6,15 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 15:23:54 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/22 15:06:41 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:23:40 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = ft_strlen((char *)s);
 	if ((char)c == '\0')

@@ -6,18 +6,17 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:23:19 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/22 16:58:41 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:23:09 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-# include "libft.h"
-
-char * ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i;
-	size_t j;
-	
+	size_t	i;
+	size_t	j;
+
 	i = 0;
 	if (*needle == '\0')
 		return ((char *)haystack);
@@ -36,14 +35,3 @@ char * ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-// int main()
-// {
-// 	char dust[] = "lorem ipsum dolor sit amet";
-// 	const char sarc[] = "ispumm";
-// 	size_t no = 30;
-// 	printf("---->>FT_STRNSTR<<-------------------------------------------------------\n\n");
-// 	printf("      Ma fonction: %s | La vraie : %s\n", ft_strnstr(dust, sarc, no), strnstr(dust, sarc, no));
-// 	printf("\n");
-
-// 	return (0);
-// }

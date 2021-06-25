@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 16:58:10 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/25 17:02:48 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:44:57 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,28 +48,29 @@ size_t	ft_letters_count(char const *str, char set, size_t i)
 }
 
 static char	**ft_create_new_tab(char **new_tab, char const *str, char set,
-size_t i, size_t row, size_t column, size_t length)
+size_t i)
 {
+	size_t	row;
+	size_t	column;
+	size_t	length;
+
+	row = 0;
+	column = 0;
+	length = 0;
 	while (str[i])
 	{
-		if (str[i] != set)
+		if (str[i++] != set)
 		{
 			length = ft_letters_count(str, set, i);
 			new_tab[row] = malloc(sizeof(char) * (length + 1));
 			if (!new_tab[row])
 				return (NULL);
 			while (column < length)
-			{
-				new_tab[row][column] = str[i];
-				column++;
-				i++;
-			}
-			new_tab[row][column] = '\0';
-			row++;
+				new_tab[row][column++] = str[i++];
+			new_tab[row++][column] = '\0';
 			column = 0;
 			--i;
 		}
-		i++;
 	}
 	new_tab[row] = NULL;
 	return (new_tab);
@@ -80,14 +81,7 @@ char	**ft_split(char const *str, char set)
 	size_t	string_count;
 	char	**new_tab;
 	size_t	i;
-	size_t	row;
-	size_t	column;
-	size_t	length;
 
-	i = 0;
-	row = 0;
-	column = 0;
-	length = 0;
 	if (!str)
 		return (NULL);
 	string_count = ft_new_string_count(str, set);
@@ -100,5 +94,6 @@ char	**ft_split(char const *str, char set)
 	new_tab = (char **)malloc(sizeof(char *) * (string_count + 1));
 	if (!new_tab)
 		return (NULL);
-	return (ft_create_new_tab(new_tab, str, set, i, row, column, length));
+	i = 0;
+	return (ft_create_new_tab(new_tab, str, set, i));
 }
