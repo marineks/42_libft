@@ -6,16 +6,16 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 16:02:33 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/04 16:05:57 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/25 16:43:38 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    if (n == -2147483648)
-        ft_putstr_fd("-2147483648", fd);
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
 	else if (n >= 0 && n <= 9)
 		ft_putchar_fd((n + '0'), fd);
 	else if (n < 0)
