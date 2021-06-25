@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 10:55:34 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/25 17:05:17 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:52:03 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char *res;
+	char	*res;
 
 	res = (char *)s;
 	while (*res)
 	{
-		if (*res  == (char)c)
+		if (*res == (char)c)
 			return (res);
 		res++;
 	}

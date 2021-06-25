@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 14:55:03 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/25 17:38:56 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:46:12 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	size;
 	size_t	index;
 
-	if (s == '\0' || !new_string)
+	if (s == '\0')
 		return (NULL);
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
