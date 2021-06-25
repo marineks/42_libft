@@ -6,37 +6,35 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 16:34:15 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/02 12:54:31 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/25 12:04:04 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-    unsigned char * ptr_dst;
-    unsigned char * ptr_src;
-    size_t i;
+	unsigned char	*ptr_dst;
+	unsigned char	*ptr_src;
+	size_t			i;
 
-    ptr_dst = (unsigned char *)dst;
-    ptr_src = (unsigned char *)src;
-    i = 0;
-    if (dst <= src)
-    {
-       	if (ptr_dst == NULL && ptr_src == NULL)
+	ptr_dst = (unsigned char *)dst;
+	ptr_src = (unsigned char *)src;
+	i = 0;
+	if (dst <= src)
+	{
+		if (ptr_dst == NULL && ptr_src == NULL)
 			return (NULL);
-        while (i < len)
-        {
-            ptr_dst[i] = ptr_src[i];
-            i++;
-        }
-    }
-    else if (dst > src)
-    {
-        while (len--)
-            ptr_dst[len] = ptr_src[len];
-    }
-    return (dst);
+		while (i < len)
+		{
+			ptr_dst[i] = ptr_src[i];
+			i++;
+		}
+	}
+	else if (dst > src)
+	{
+		while (len--)
+			ptr_dst[len] = ptr_src[len];
+	}
+	return (dst);
 }
-
-// version avec un cache ?
