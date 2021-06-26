@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 16:40:47 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/25 17:20:12 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/26 11:26:49 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*copy;
 	unsigned int	i;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	copy = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!copy)

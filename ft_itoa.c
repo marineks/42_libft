@@ -6,13 +6,13 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 12:07:40 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/24 19:11:26 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/26 12:17:35 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int long	ft_howmanydigits(int long number)
+static int long	ft_howmanydigits(int long number)
 {
 	int long	i;
 

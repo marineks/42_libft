@@ -6,13 +6,13 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 16:44:36 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/25 17:39:33 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/26 12:18:33 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_ischarset_start(char const *s1, char const *set)
+static size_t	ft_ischarset_start(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
@@ -35,7 +35,7 @@ size_t	ft_ischarset_start(char const *s1, char const *set)
 	return (i);
 }
 
-size_t	ft_ischarset_end(char const *s1, char const *set)
+static size_t	ft_ischarset_end(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;

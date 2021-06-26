@@ -6,13 +6,13 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 16:58:10 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/25 17:44:57 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/26 12:17:33 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_new_string_count(char const *str, char set)
+static size_t	ft_new_string_count(char const *str, char set)
 {
 	size_t	i;
 	size_t	count;
@@ -34,7 +34,7 @@ size_t	ft_new_string_count(char const *str, char set)
 	return (count);
 }
 
-size_t	ft_letters_count(char const *str, char set, size_t i)
+static size_t	ft_letters_count(char const *str, char set, size_t i)
 {
 	size_t	count;
 
@@ -59,7 +59,7 @@ size_t i)
 	length = 0;
 	while (str[i])
 	{
-		if (str[i++] != set)
+		if (str[i] != set)
 		{
 			length = ft_letters_count(str, set, i);
 			new_tab[row] = malloc(sizeof(char) * (length + 1));
@@ -71,6 +71,7 @@ size_t i)
 			column = 0;
 			--i;
 		}
+		i++;
 	}
 	new_tab[row] = NULL;
 	return (new_tab);

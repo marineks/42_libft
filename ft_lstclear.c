@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 15:21:23 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/24 19:18:10 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/26 11:31:56 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list	*current_node;
 	t_list	*next_node;
 
-	if (!lst || !del)
+	if (!lst || !*lst|| !del)
 		return ;
 	current_node = *lst;
 	while (current_node != NULL)
