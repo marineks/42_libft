@@ -6,7 +6,7 @@
 #    By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 15:53:49 by msanjuan          #+#    #+#              #
-#    Updated: 2021/06/23 17:23:58 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/06/26 17:34:54 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,20 +78,21 @@ ${NAME}: ${OBJS}
 
 run:	all
 		@echo "Compiling and running the files..."
-		${CC} ${CFLAGS} main.c -I. -L. -lft
-		./a.out
+		${CC} ${CFLAGS} -I. -L. -lft
+		
 
 bonus:	${OBJS} ${BOBJS}
 		@echo "Creating the libft wih the .o bonus files..."
 		${CREATE} ${NAME} ${OBJS} ${BOBJS}
+		@touch bonus
 
 all:	${NAME}
 
 clean:
-		${RM} ${OBJS} ${BOBJS} ${NAME} ./a.out
+		${RM} ${OBJS} ${BOBJS} ${NAME} bonus
 
 fclean: clean
-		${RM} ${OBJS} ${BOBJS} ${NAME} ./a.out	
+		${RM} ${OBJS} ${BOBJS} ${NAME} bonus
 
 re: 	fclean run
 

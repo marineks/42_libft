@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 11:28:23 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/24 19:14:46 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/26 16:59:14 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 			*alst = new;
 		else
 		{
-			start = ft_lstlast(*alst);
+			while (start->next != NULL)
+				start = start->next;
 			start->next = new;
 		}
 	}
