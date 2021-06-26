@@ -6,34 +6,35 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 17:23:42 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/26 17:53:09 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/26 20:27:28 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
 
-// t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-// {
-//     t_list *lst_after_iteration;
-//     t_list *lst_after_creation;
+/* Itère sur la liste lst et applique la fonction f au contenu de chaque élément. 
+Crée une nouvelle listerésultant des applications successives de f. 
+La fonction del est la pour detruire le contenu d un element si necessaire */
 
-//     if (!lst || !f || !del)
-//         return (NULL);
-//     // Itère sur la liste lst et applique la fonction f aucontenu de chaque élément
-//     lst_after_iteration = ft_lstiter(lst, (*f)(lst));
+#include "libft.h"
 
-//     // Crée une nouvelle liste résultant des applications successives de f
-//     ft_lstnew(lst_after_iteration);
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+    t_list *cpy_list; // liste qui accueillera les applications succ. de f
+    t_list *new;
 
-//         while (lst)
-//         {
-//             lst_after_iteration = (*f)(lst->content);
-//             lst_after_creation = ft_lstnew(lst_after_iteration);
-//             lafonction del est la pour detruire le contenu d unelement si necessaire
-//             if (!lst_after_creation)
-//                 (*del) //  AFINIR
-//             lst = lst->next;
-//         }
-//         (*f)(lst->content);
-
-// }
+    new = NULL;
+    if (!lst || !f )
+        return (NULL);
+    while (lst) // itere dans lst (ici lst et pas lst->next car besoin de la derniere iteration pour la copie)
+    {
+        cpy_list = ft_lstnew((*f)(lst->content)); // cree nouvelle liste
+		if (!cpy_list)
+        {
+            ft_lstclear(&new, del); // on del le contenu si necessaire de new du coup
+            return (NULL);
+        }
+        ft_lstadd_back(&new, cpy_list); // on ajoute dans le meme ordre dans new
+        lst = lst->next;
+	}
+	return (new);	
+    }
