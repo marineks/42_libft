@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 16:58:10 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/26 17:42:39 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/26 17:44:29 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ static size_t	ft_letters_count(char const *str, char set, size_t i)
 	return (count);
 }
 
-static	void *ft_free(char **tab)
+static void	*ft_free(char **tab)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
@@ -114,42 +114,4 @@ char	**ft_split(char const *str, char set)
 		return (NULL);
 	i = 0;
 	return (ft_create_new_tab(new_tab, str, set, i));
-}
-
-void f(void)
-{
-	system("leaks a.out");
-}
-
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-int main()
-{
-	char **tabtest;
-	size_t i;
-	size_t j;
-
-	tabtest = ft_split("Bonjour Test", ' ');
-
-	i= 0;
-	j = 0;
-	if (tabtest)
-	{
-		while (tabtest[i])
-		{
-			while (tabtest[i][j])
-			{
-				printf("%c", tabtest[i][j]);
-				j++;
-			}
-			free(tabtest[i]);
-			putchar('\n');
-			i++;
-			j = 0;
-		}
-		free(tabtest);
-	}
-	atexit(f);
-	return (0);
 }
