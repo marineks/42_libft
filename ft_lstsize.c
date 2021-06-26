@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:48:23 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/06/26 11:11:20 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/06/26 17:52:36 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	ft_lstsize(t_list *lst)
 
 	if (!lst)
 		return (0);
-	count = 0;
-	while (lst != NULL)
+	count = 1;
+	while (lst->next != NULL)
 	{
 		lst = lst->next;
 		count++;
